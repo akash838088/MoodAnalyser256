@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 using static MoodAnalyser.MoodAnlyseException;
 
 namespace MoodAnalyser
-{ 
-    public class MoodAnalyserClass
+{
+    public class MoodAnalizerClass
     {
         string message;
-        public MoodAnalyserClass(string message)
+        public MoodAnalizerClass()
+        {
+            message = null;
+        }
+        public MoodAnalizerClass(string message)
         {
             this.message = message;
         }
@@ -18,6 +22,8 @@ namespace MoodAnalyser
         {
             try
             {
+                if (message.Equals(string.Empty))
+                    throw new MoodAnlyseException(MoodAnlyseExceptionType.EmptyMood, "Please do not Enter the empty Input");
                 if (message.Contains("Sad"))
                     return "Sad";
                 else
@@ -28,5 +34,6 @@ namespace MoodAnalyser
                 throw new MoodAnlyseException(MoodAnlyseExceptionType.NullMood, "Please do not Enter the Null Input");
             }
         }
+
     }
 }

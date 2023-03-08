@@ -4,32 +4,25 @@ namespace MoodAnalyserTestCase
     public class Tests
     {
 
-
         [Test]
         public void GivenSadMood_WhenAnalized_ShouldReturnSad()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass("I am in Sad Mood");
+            MoodAnalizerClass mood = new MoodAnalizerClass("I am in Sad Mood");
             string result = mood.AnalizeMood();
             Assert.AreEqual("Sad", result);
         }
         [Test]
         public void GivenHappyMood_WhenAnalized_ShouldReturnHappy()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass("I am in Happy Mood");
+            MoodAnalizerClass mood = new MoodAnalizerClass("I am in Happy Mood");
             string result = mood.AnalizeMood();
             Assert.AreEqual("Happy", result);
         }
-        [Test]
-        public void GivenNullMood_WhenAnalized_ShouldReturnHappy()
-        {
-            MoodAnalyserClass mood = new MoodAnalyserClass(null);
-            string result = mood.AnalizeMood();
-            Assert.AreEqual("Happy", result);
-        }
+
         [Test]
         public void GivenNullMood_ThrowMoodAnalysisException_NullMessage()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass(null);
+            MoodAnalizerClass mood = new MoodAnalizerClass(null);
             try
             {
                 string result = mood.AnalizeMood();
@@ -42,7 +35,7 @@ namespace MoodAnalyserTestCase
         [Test]
         public void GivenEmptyMood_ThrowMoodAnalysisException_EmptyMessage()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass("");
+            MoodAnalizerClass mood = new MoodAnalizerClass("");
             try
             {
                 string result = mood.AnalizeMood();
@@ -52,5 +45,6 @@ namespace MoodAnalyserTestCase
                 Assert.AreEqual("Please do not Enter the empty Input", obj.Message);
             }
         }
+
     }
 }
