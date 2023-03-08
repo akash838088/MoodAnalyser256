@@ -10,8 +10,8 @@ namespace MoodAnalyser
     {
         public static void Main(string[] args)
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass();
-            mood.AnalizeMood("I am Sad");
+            MoodAnalyserClass mood = new MoodAnalyserClass("I am Sad");
+            mood.AnalizeMood();
             Console.ReadLine();
         }
     }
