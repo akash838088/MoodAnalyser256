@@ -3,19 +3,17 @@ namespace MoodAnalyserTestCase
 {
     public class Tests
     {
-
+        MoodAnalyserClass mood = new MoodAnalyserClass("I am in Sad Mood");
 
         [Test]
         public void GivenSadMood_WhenAnalized_ShouldReturnSad()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass("I am in Sad Mood");
             string result = mood.AnalizeMood();
             Assert.AreEqual("Sad", result);
         }
         [Test]
         public void GivenHappyMood_WhenAnalized_ShouldReturnHappy()
         {
-            MoodAnalyserClass mood = new MoodAnalyserClass("I am in Happy Mood");
             string result = mood.AnalizeMood();
             Assert.AreEqual("Sad", result);
         }

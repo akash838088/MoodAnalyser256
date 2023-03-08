@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MoodAnalyser
-{
+{ 
     public class MoodAnalyserClass
     {
         string message;
@@ -15,11 +15,17 @@ namespace MoodAnalyser
         }
         public string AnalizeMood()
         {
-            if (message.Contains("Sad"))
-                return "Sad";
-            else
-                return "Sad";
-
+            try
+            {
+                if (message.Contains("Sad"))
+                    return "Sad";
+                else
+                    return "Happy";
+            }
+            catch (NullReferenceException)
+            {
+                return "Happy";
+            }
         }
     }
 }
